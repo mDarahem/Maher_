@@ -1,0 +1,2 @@
+[console_scripts]
+maher = apps.cli.main:app

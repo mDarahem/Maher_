@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: maher
+Version: 0.1.0
+Summary: Maher — clean, config-driven scaffold (Option A+)
+Requires-Python: >=3.10
+Requires-Dist: typer>=0.12
+Requires-Dist: pydantic>=2.8
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: requests>=2.31
+Requires-Dist: rich>=13.7
+Provides-Extra: transformers
+Requires-Dist: transformers>=4.44; extra == "transformers"
+Requires-Dist: accelerate>=0.33; extra == "transformers"
+Requires-Dist: safetensors>=0.4; extra == "transformers"
+Requires-Dist: huggingface_hub>=0.24; extra == "transformers"

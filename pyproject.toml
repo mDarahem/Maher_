@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "maher"
 version = "0.1.0"
@@ -10,7 +14,9 @@ dependencies = [
   "requests>=2.31",
   "rich>=13.7"
 ]
-optional-dependencies.transformers = [
+
+[project.optional-dependencies]
+transformers = [
   "transformers>=4.44",
   "accelerate>=0.33",
   "safetensors>=0.4",
@@ -19,6 +25,9 @@ optional-dependencies.transformers = [
 
 [project.scripts]
 maher = "apps.cli.main:app"
+
+[tool.setuptools.packages.find]
+include = ["apps*", "core*", "adapters*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

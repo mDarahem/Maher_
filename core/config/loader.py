@@ -15,7 +15,13 @@ def _resolve_env(x: Any) -> Any:
     if isinstance(x, dict): return {k:_resolve_env(v) for k,v in x.items()}
     if isinstance(x, list): return [_resolve_env(v) for v in x]
     if isinstance(x, str):
-        return _ENV.sub(lambda m: str(_coerce(m.group(1), os.environ.get(m.group(2), m.group(3)))), x)
+        def replacer(m):
+            default_val = m.group(3)
+            # Remove quotes from default values
+            if default_val.startswith('"') and default_val.endswith('"'):
+                default_val = default_val[1:-1]
+            return str(_coerce(m.group(1), os.environ.get(m.group(2), default_val)))
+        return _ENV.sub(replacer, x)
     return x
 
 class OllamaOptions(BaseModel):
