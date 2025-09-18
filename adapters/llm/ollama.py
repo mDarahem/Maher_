@@ -1,9 +1,10 @@
 from adapters.llm.base import register
 import requests
 
+
 @register("ollama")
 class OllamaLLM:
-    def __init__(self, endpoint: str, model: str, options: dict|None=None):
+    def __init__(self, endpoint: str, model: str, options: dict | None = None):
         self.endpoint = endpoint.rstrip("/")
         self.model = model
         self.options = options or {}

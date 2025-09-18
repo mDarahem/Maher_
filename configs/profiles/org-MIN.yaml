@@ -1,0 +1,15 @@
+llm:
+  provider: ollama
+  ollama:
+    endpoint: http://localhost:11434/api/generate
+    model: qwen:4b-instruct
+
+prompting:
+  locale: ar
+  org_code: MIN
+  style_file: data/org/MIN/style.yaml
+  vocab_file: data/org/MIN/vocab.yaml
+  shots_file: configs/shots/email_summary_MIN.yaml
+
+runtime:
+  output_dir: output/MIN

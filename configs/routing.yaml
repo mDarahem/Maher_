@@ -1,3 +1,3 @@
 tasks:
   email_summary: { provider: ollama, model: "qwen:4b-instruct" }
-  reply_suggestion: { provider: ollama, model: "qwen:4b-instruct" }
+  reply_suggestion: { provider: hf, model_id: "Qwen/Qwen2.5-7B-Instruct" }

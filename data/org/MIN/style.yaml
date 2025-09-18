@@ -1,0 +1,10 @@
+tone: formal
+format: structured
+sections:
+  - summary
+  - actions
+  - deadlines
+language:
+  formality: high
+  bullet_style: numbered
+  greeting: false

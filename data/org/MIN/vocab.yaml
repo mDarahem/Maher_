@@ -1,0 +1,13 @@
+terms:
+  department: القسم
+  manager: المدير
+  deadline: الموعد النهائي
+  action_required: إجراء مطلوب
+  approval: موافقة
+  budget: الميزانية
+  contract: العقد
+  maintenance: الصيانة
+
+replacements:
+  "مزود الخدمة": "المقاول"
+  "التوريد": "التسليم"

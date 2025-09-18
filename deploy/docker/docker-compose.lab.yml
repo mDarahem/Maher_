@@ -13,8 +13,11 @@ services:
     environment:
       - OLLAMA_ENDPOINT=http://ollama:11434/api/generate
       - OUTPUT_DIR=/data/output
+      - TRANSFORMERS_CACHE=/models
+      - HF_HOME=/models
     volumes:
       - ../../output:/data/output
+      - ../../models:/models
     depends_on: [ollama]
     command: ["--help"]
 
