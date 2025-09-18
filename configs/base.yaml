@@ -1,0 +1,28 @@
+runtime:
+  output_dir: ${env:OUTPUT_DIR, "output"}
+  log_level: ${env:LOG_LEVEL, "INFO"}
+
+llm:
+  provider: ${env:LLM_PROVIDER, "ollama"}
+  ollama:
+    endpoint: ${env:OLLAMA_ENDPOINT, "http://localhost:11434/api/generate"}
+    model: ${env:OLLAMA_MODEL, "qwen:4b"}
+    options:
+      num_ctx: ${env:int:OLLAMA_NUM_CTX, 4096}
+      num_predict: ${env:int:OLLAMA_NUM_PREDICT, 512}
+      temperature: ${env:float:OLLAMA_TEMP, 0.2}
+      top_p: ${env:float:OLLAMA_TOP_P, 0.9}
+      top_k: ${env:int:OLLAMA_TOP_K, 40}
+      repeat_penalty: ${env:float:OLLAMA_REPEAT_PENALTY, 1.05}
+  hf:
+    model_id: ${env:HF_MODEL_ID, "Qwen/Qwen2.5-7B-Instruct"}
+    dtype: ${env:HF_DTYPE, "bfloat16"}
+    device_map: ${env:HF_DEVICE_MAP, "auto"}
+    trust_remote_code: ${env:HF_TRUST_REMOTE_CODE, false}
+    max_new_tokens: 512
+
+prompting:
+  locale: ar
+  safety:
+    redact_ids: true
+    max_len: 2048

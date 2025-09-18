@@ -1,0 +1,7 @@
+llm:
+  provider: ollama
+  ollama:
+    endpoint: http://ollama:11434/api/generate
+    model: qwen:4b-instruct
+runtime:
+  output_dir: output

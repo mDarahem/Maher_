@@ -1,0 +1,25 @@
+[project]
+name = "maher"
+version = "0.1.0"
+description = "Maher — clean, config-driven scaffold (Option A+)"
+requires-python = ">=3.10"
+dependencies = [
+  "typer>=0.12",
+  "pydantic>=2.8",
+  "pyyaml>=6.0",
+  "requests>=2.31",
+  "rich>=13.7"
+]
+optional-dependencies.transformers = [
+  "transformers>=4.44",
+  "accelerate>=0.33",
+  "safetensors>=0.4",
+  "huggingface_hub>=0.24"
+]
+
+[project.scripts]
+maher = "apps.cli.main:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
